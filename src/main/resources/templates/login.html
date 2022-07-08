@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1> User Login Page </h1>
+            <form action="#" th:action="@{/login}" method="post" th:object="${login}">
+
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid Username or Password. </div>
+                </div>
+
+                <div class="form-group">
+                    <label for ="username"> Username </label>:
+                    <input type="text" class="form-control" id = "username" name = "username" th:field="*{username}"
+                           placeholder="Enter Email ID" autofocus="autofocus">
+                </div>
+
+                <div class="form-group">
+                    <label for ="password"> Password </label>:
+                    <input type="password" id="password" class="form-control" th:field="*{password}"
+                           placeholder="Enter Password" />
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" name="Login-submit" id ="Login-submit"
+                                   class="form-control btn btn-primary" value="Log In" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
