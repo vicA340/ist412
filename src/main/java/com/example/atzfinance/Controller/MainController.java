@@ -11,9 +11,9 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/dashboard")
     public String hello() {
-        return "hello";
+        return "dashboard";
     }
 
     @GetMapping("/login")

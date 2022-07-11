@@ -1,0 +1,25 @@
+2022-07-11 11:52:32.605  INFO 10864 --- [main] c.e.atzfinance.AtzfinanceApplication     : Starting AtzfinanceApplication using Java 1.8.0_321 on DESKTOP-VHQ508N with PID 10864 (Z:\wiiqw\Documents\workspaces\ist412\target\classes started by wiiqw in Z:\wiiqw\Documents\workspaces\ist412)
+2022-07-11 11:52:32.609  INFO 10864 --- [main] c.e.atzfinance.AtzfinanceApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-07-11 11:52:33.240  INFO 10864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-11 11:52:33.291  INFO 10864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2022-07-11 11:52:34.039  INFO 10864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-11 11:52:34.050  INFO 10864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 11:52:34.051  INFO 10864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-11 11:52:34.232  INFO 10864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 11:52:34.233  INFO 10864 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2022-07-11 11:52:34.503  INFO 10864 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-11 11:52:34.595  INFO 10864 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-11 11:52:34.756  INFO 10864 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-11 11:52:34.893  INFO 10864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-11 11:52:35.535  INFO 10864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-11 11:52:35.562  INFO 10864 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-07-11 11:52:36.080  INFO 10864 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-11 11:52:36.089  INFO 10864 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 11:52:36.437  WARN 10864 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-11 11:52:36.711  INFO 10864 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ab3f611, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33425171, org.springframework.security.web.context.SecurityContextPersistenceFilter@77648321, org.springframework.security.web.header.HeaderWriterFilter@27691ee8, org.springframework.security.web.csrf.CsrfFilter@4b552b13, org.springframework.security.web.authentication.logout.LogoutFilter@53f1fcc2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@239bc43f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43201f84, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c0a6f62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44aa5585, org.springframework.security.web.session.SessionManagementFilter@78a34c47, org.springframework.security.web.access.ExceptionTranslationFilter@3d213a2b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@37a939bc]
+2022-07-11 11:52:36.863  INFO 10864 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-07-11 11:52:37.057  INFO 10864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-11 11:52:37.065  INFO 10864 --- [main] c.e.atzfinance.AtzfinanceApplication     : Started AtzfinanceApplication in 4.823 seconds (JVM running for 5.199)
+2022-07-11 11:53:02.726  INFO 10864 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 11:53:02.727  INFO 10864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 11:53:02.729  INFO 10864 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

@@ -48,7 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.formLogin()
 				.loginPage("/login")
-                .defaultSuccessUrl("/hello", true)
+                // TODO: https://stackoverflow.com/questions/14573654/spring-security-redirect-to-previous-page-after-successful-login
+                .defaultSuccessUrl("/dashboard", true)
                 .permitAll()
 				.and()
 			.logout()
