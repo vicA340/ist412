@@ -19,6 +19,9 @@ public class FormTestController {
     @PostMapping("/test")
     public String PostSubmit(@ModelAttribute FormTest test, Model model) {
       model.addAttribute("TEST", test);
+      if (test.getContent().equals("special")) {
+        return "Test/Special";
+      }
       return "Test/PostData";
     }
 }
