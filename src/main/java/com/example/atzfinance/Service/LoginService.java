@@ -23,7 +23,10 @@ public class LoginService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
         // TODO: Encode password at registration
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), new BCryptPasswordEncoder().encode(user.getPassword()), user.getAuthorities());
+        return new org.springframework.security.core.userdetails.User(
+            user.getUsername(), 
+            new BCryptPasswordEncoder().encode(user.getPassword()), 
+            user.getAuthorities());
     }
  
 }
