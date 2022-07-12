@@ -19,7 +19,7 @@ public class MainController {
     }
 
     @GetMapping("/dashboard")
-    public String hello(Model model) {
+    public String dashboard(Model model) {
         model.addAttribute("listLoans", loanService.getAllLoans());
         return "dashboard";
     }
