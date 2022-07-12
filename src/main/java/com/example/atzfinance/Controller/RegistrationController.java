@@ -24,8 +24,7 @@ public class RegistrationController {
 
     @PostMapping("/doRegister")
     public String processRegister(User user) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);
         return "Registration/signup_complete";
