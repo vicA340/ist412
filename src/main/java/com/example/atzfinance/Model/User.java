@@ -26,6 +26,14 @@ public class User implements UserDetails {
     private String password;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return new ArrayList<>();
@@ -60,7 +68,27 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-       
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String email) {
+        this.email = email;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getFullName() {
         return this.firstName + " " + this.lastName;
     }
