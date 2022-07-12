@@ -18,32 +18,32 @@ public class WebSecurityConfig {
 
     @Autowired
     UserDetailsService userDetailsService;
-     
-    @Bean
-    public PasswordEncoder passwordEncoder() {
+
+    @Bean 
+    PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
- 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+    @Bean 
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(userDetailsService);
         authenticationManager = authenticationManagerBuilder.build();
 
-	    http.authenticationManager(authenticationManager)
-		    .authorizeRequests()
-			    .antMatchers("/", "/index").permitAll()
-			    .anyRequest().authenticated()
-			    .and()
-		    .formLogin()
-			    .loginPage("/login")
+        http.authenticationManager(authenticationManager)
+                .authorizeRequests()
+                .antMatchers("/", "/index").permitAll()
+                .anyRequest().authenticated()
+                .and()
+            .formLogin()
+                .loginPage("/login")
                 // TODO: https://stackoverflow.com/questions/14573654/spring-security-redirect-to-previous-page-after-successful-login
                 .defaultSuccessUrl("/dashboard", true)
                 .permitAll()
-			    .and()
-		    .logout()
-			    .permitAll();
+                .and()
+            .logout()
+                .permitAll();
         return http.build();
     }
 }
