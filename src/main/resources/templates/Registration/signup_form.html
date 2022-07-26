@@ -46,6 +46,10 @@
             <div>
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </div>
+
+            <div th:if="${param.error}" class="alert alert-danger">    
+                Error: Email already in use.
+            </div>
         </div>
         </form>
     </div>
