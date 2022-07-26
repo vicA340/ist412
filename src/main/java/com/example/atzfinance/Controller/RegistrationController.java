@@ -1,7 +1,6 @@
 package com.example.atzfinance.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.atzfinance.Model.User;
 import com.example.atzfinance.Repository.UserRepository;
+import com.example.atzfinance.WebSecurity.OurPasswordEncoder;
 
 @Controller
 public class RegistrationController {
@@ -27,7 +27,7 @@ public class RegistrationController {
         if (userRepo.findByEmail(user.getUsername()) != null) {
             return "redirect:/register?error";
         }
-        String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
+        String encodedPassword = OurPasswordEncoder.encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);
         return "Registration/signup_complete";
