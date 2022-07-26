@@ -19,7 +19,7 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 
         Object redirectURLObject = request.getSession().getAttribute(REDIRECT_URL_SESSION_ATTRIBUTE_NAME);
 
-        if (redirectURLObject == null) {
+        if (redirectURLObject == null || redirectURLObject.equals("http://localhost:8080/")) {
             setDefaultTargetUrl("/dashboard");
         } else {
             setDefaultTargetUrl(redirectURLObject.toString());
