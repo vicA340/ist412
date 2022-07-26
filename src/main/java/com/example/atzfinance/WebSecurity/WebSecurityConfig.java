@@ -28,8 +28,8 @@ public class WebSecurityConfig {
                 .and()
             .formLogin()
                 .loginPage("/login")
-                // TODO: https://stackoverflow.com/questions/14573654/spring-security-redirect-to-previous-page-after-successful-login
-                .defaultSuccessUrl("/dashboard", true)
+                //.defaultSuccessUrl("/dashboard", true)
+                .successHandler(new CustomAuthenticationSuccessHandler())
                 .permitAll()
                 .and()
             .logout()
