@@ -8,4 +8,6 @@ public interface LoanService {
     void saveLoan(Loan loan);
     Loan getLoanById(long id);
     void deleteLoanById(long id);
+    void denyLoan(long id);
+    void approveLoan(long id);
 }

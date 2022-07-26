@@ -28,8 +28,23 @@
             <td th:text="${loan.lastName}"></td>
             <td th:text="${loan.creditScore}"></td>
             <td th:text="${loan.status}"></td>
-            <td>
+            <td th:if="${loan.status == T(com.example.atzfinance.Model.LoanStatus).PENDING}">
                 <a th:href="@{/deleteLoan/{id}(id=${loan.id})}" class="btn btn-danger">Delete</a>
+            </td>
+            <td th:if="${loan.status != T(com.example.atzfinance.Model.LoanStatus).PENDING}">
+                
+            </td>
+            <td th:if="${loan.status == T(com.example.atzfinance.Model.LoanStatus).PENDING}">
+                <a th:href="@{/denyLoan/{id}(id=${loan.id})}" class="btn btn-primary">Deny</a>
+            </td>
+            <td th:if="${loan.status != T(com.example.atzfinance.Model.LoanStatus).PENDING}">
+                
+            </td>
+            <td th:if="${loan.status == T(com.example.atzfinance.Model.LoanStatus).PENDING}">
+                <a th:href="@{/approveLoan/{id}(id=${loan.id})}" class="btn btn-primary">Approve</a>
+            </td>
+            <td th:if="${loan.status != T(com.example.atzfinance.Model.LoanStatus).PENDING}">
+                
             </td>
         </tr>
         </tr>

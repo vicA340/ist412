@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.atzfinance.Repository.LoanRepository;
 import com.example.atzfinance.Model.Loan;
+import com.example.atzfinance.Model.LoanStatus;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +42,19 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public void deleteLoanById(long id) {
         this.loanRepository.deleteById(id);
+    }
+
+    @Override
+    public void denyLoan(long id) {
+        Loan loan = getLoanById(id);
+        loan.setStatus(LoanStatus.DENIED);
+        saveLoan(loan);
+    }
+
+    @Override
+    public void approveLoan(long id) {
+        Loan loan = getLoanById(id);
+        loan.setStatus(LoanStatus.APPROVED);
+        saveLoan(loan);
     }
 }

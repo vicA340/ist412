@@ -31,9 +31,21 @@ public class LoanController {
         return "redirect:/dashboard";
     }
 
-    @GetMapping("/deleteLoan/{sid}")
-    public String deleteStudent(@PathVariable( value = "sid" ) long id) {
+    @GetMapping("/deleteLoan/{id}")
+    public String deleteLoan(@PathVariable( value = "id" ) long id) {
         this.loanService.deleteLoanById(id);
+        return "redirect:/dashboard";
+    }
+
+    @GetMapping("/denyLoan/{id}")
+    public String denyLoan(@PathVariable( value = "id" ) long id) {
+        this.loanService.denyLoan(id);
+        return "redirect:/dashboard";
+    }
+
+    @GetMapping("/approveLoan/{id}")
+    public String approveLoan(@PathVariable( value = "id" ) long id) {
+        this.loanService.approveLoan(id);
         return "redirect:/dashboard";
     }
 }

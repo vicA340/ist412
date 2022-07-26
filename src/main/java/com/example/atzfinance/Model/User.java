@@ -22,9 +22,20 @@ public class User implements UserDetails {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column(name = "isUnderwriter")
+    private boolean isUnderwriter;
+
     private String email;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
+    public void setIsUnderwriter(boolean isUnderwriter) {
+        this.isUnderwriter = isUnderwriter;
+    }
+
+    public boolean getIsUnderwriter() {
+        return this.isUnderwriter;
+    }
 
     public String getFirstName() {
         return firstName;
