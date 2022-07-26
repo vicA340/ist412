@@ -1,6 +1,7 @@
 package com.example.atzfinance.Service;
 
 import com.example.atzfinance.Model.Loan;
+
 import java.util.List;
 
 public interface LoanService {

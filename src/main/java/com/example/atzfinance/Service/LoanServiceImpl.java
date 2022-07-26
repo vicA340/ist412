@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.atzfinance.Repository.LoanRepository;
 import com.example.atzfinance.Model.Loan;
-import com.example.atzfinance.Model.LoanStatus;
+import com.example.atzfinance.Model.Loan.LoanStatus;
 
 import java.util.List;
 import java.util.Optional;

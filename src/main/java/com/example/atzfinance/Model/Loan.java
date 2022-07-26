@@ -23,6 +23,10 @@ public class Loan implements Serializable {
     @Column(name="status")
     private LoanStatus status;
 
+    public enum LoanStatus {
+        PENDING, DENIED, APPROVED
+    }
+    
     public LoanStatus getStatus() {
         return status;
     }
@@ -62,6 +66,5 @@ public class Loan implements Serializable {
     public void setCreditScore(int creditScore) {
         this.creditScore = creditScore;
     }
-
     
 }

@@ -1,7 +1,6 @@
-package com.example.atzfinance.Controller;
+package com.example.atzfinance.Controller.Dashboard;
 
 import com.example.atzfinance.Model.Loan;
-import com.example.atzfinance.Model.LoanStatus;
 import com.example.atzfinance.Service.LoanService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,12 @@ public class LoanController {
     @GetMapping("/loan")
     public String GetLoan(Model model) {
         model.addAttribute("loan", new Loan());
-        return "loan_application";
+        return "Dashboard/LoanApplication/loan_application";
     }
 
     @PostMapping("/loan")
     public String PostLoan(@ModelAttribute Loan loan) {
-        loan.setStatus(LoanStatus.PENDING);
+        loan.setStatus(Loan.LoanStatus.PENDING);
         loanService.saveLoan(loan);
         return "redirect:/dashboard";
     }

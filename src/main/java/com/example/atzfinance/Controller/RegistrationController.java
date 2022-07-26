@@ -24,6 +24,9 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public String processRegister(User user) {
+        if (userRepo.findByEmail(user.getUsername()) != null) {
+            return "redirect:/register?error";
+        }
         String encodedPassword = new BCryptPasswordEncoder().encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);

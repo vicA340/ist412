@@ -14,7 +14,7 @@ public class LoginService implements UserDetailsService {
  
     @Autowired
     private UserRepository userRepo;
-     
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepo.findByEmail(username);
@@ -26,5 +26,4 @@ public class LoginService implements UserDetailsService {
             user.getPassword(), 
             user.getAuthorities());
     }
- 
 }
