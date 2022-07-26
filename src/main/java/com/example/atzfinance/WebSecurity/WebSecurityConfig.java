@@ -6,26 +6,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
  
 @Configuration
 public class WebSecurityConfig {
 
     @Autowired
-    UserDetailsService userDetailsService;
-
-    @Bean 
-    PasswordEncoder passwordEncoder() {
-        return OurPasswordEncoder.encoder;
-    }
+    private CustomAuthenticationProvider authProvider;
 
     @Bean 
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.userDetailsService(userDetailsService);
+        authenticationManagerBuilder.authenticationProvider(authProvider);
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
 
         http.authenticationManager(authenticationManager)
