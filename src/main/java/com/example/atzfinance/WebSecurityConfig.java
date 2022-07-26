@@ -13,15 +13,13 @@ import org.springframework.security.web.SecurityFilterChain;
  
 @Configuration
 public class WebSecurityConfig {
-    
-    AuthenticationManager authenticationManager;
 
     @Autowired
     UserDetailsService userDetailsService;
 
     @Bean 
     PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // TODO: PASSWORD ENCODER
     }
 
     @Bean 
@@ -29,11 +27,11 @@ public class WebSecurityConfig {
 
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
         authenticationManagerBuilder.userDetailsService(userDetailsService);
-        authenticationManager = authenticationManagerBuilder.build();
+        AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
 
         http.authenticationManager(authenticationManager)
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/register", "/doRegister").permitAll()
+                .antMatchers("/", "register").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
