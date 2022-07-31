@@ -30,7 +30,7 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 
     public void setIsUnderwriter(boolean isUnderwriter) {
-        this.isUnderwriter = isUnderwriter;
+       this.isUnderwriter = isUnderwriter;
     }
 
     public boolean getIsUnderwriter() {

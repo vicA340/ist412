@@ -1,7 +1,8 @@
 # ATZ-Finance
 ## IST 412 Group 1: Victor Altadonna, Christian Chernock, Craig Freiwald
 
-### Refactoring
+### Refactoring 
+(all refactoring was completed by Christian Chernock)
 1.	Fixed 500 caused by registering with a username that already exists
 
     •	This was accomplished by adding an error check method into the RegistrationController class. It simply checks the attached database for the proposed name and       returns an error message if it already exists.
@@ -32,4 +33,5 @@
     •	Removed the antMatchers method
 
 
-### New Use Cases: blah blah blah
+### New Use Case:
+
