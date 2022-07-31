@@ -34,4 +34,5 @@
 
 
 ### New Use Case:
+Added new use case of approve or deny a loan as an underwriter type user.
 
