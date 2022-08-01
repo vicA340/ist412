@@ -17,6 +17,7 @@
             <tr>
                 <th>First name</th>
                 <th>Last Name</th>
+                <th>Loan Amount</th>
                 <th>Credit Score</th>
                 <th>Status</th>
             </tr>
@@ -26,6 +27,7 @@
         <tr th:each="loan : ${listLoans}">
             <td th:text="${loan.firstName}"></td>
             <td th:text="${loan.lastName}"></td>
+            <td th:text="'$' + ${loan.loanAmount}"></td>
             <td th:text="${loan.creditScore}"></td>
             <td th:text="${loan.status}"></td>
             <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">

@@ -17,7 +17,7 @@ public class MainController {
 
     @GetMapping("/login")
     public String login(HttpServletRequest request) throws Exception {
-        String referer = request.getHeader("Referer");
+        String referer = null;//request.getHeader("Referer");
         request.getSession().setAttribute(CustomAuthenticationSuccessHandler.REDIRECT_URL_SESSION_ATTRIBUTE_NAME, referer); 
         return "login"; 
     }

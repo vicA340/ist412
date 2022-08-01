@@ -17,6 +17,9 @@ public class Loan implements Serializable {
     @Column(name="lastName")
     private String lastName;
 
+    @Column(name="loanAmount", scale=2)
+    private double loanAmount;
+
     @Column(name="creditScore")
     private int creditScore;
 
@@ -57,6 +60,14 @@ public class Loan implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public double getLoanAmount() {
+        return loanAmount;
+    }
+
+    public void setLoanAmount(double loanAmount) {
+        this.loanAmount = loanAmount;
     }
 
     public int getCreditScore() {
