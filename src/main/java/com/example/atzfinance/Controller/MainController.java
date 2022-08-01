@@ -1,7 +1,5 @@
 package com.example.atzfinance.Controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
  
@@ -14,7 +12,7 @@ public class MainController {
     }
 
     @GetMapping("/login")
-    public String login(HttpServletRequest request) throws Exception {
+    public String login() throws Exception {
         return "login"; 
     }
 }
