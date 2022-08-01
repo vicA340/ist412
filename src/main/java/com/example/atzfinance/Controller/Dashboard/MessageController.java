@@ -1,4 +1,4 @@
-package com.example.atzfinance.Controller;
+package com.example.atzfinance.Controller.Dashboard;
 
 import java.util.List;
 
