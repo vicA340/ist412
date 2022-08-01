@@ -54,6 +54,8 @@
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Log out"/>
     </form>
+    <br>
+    <span th:if="${isUnderwriter} == true"><a href="/audit">View audit logs</a></span>
 </div>
 </body>
 </html>

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.atzfinance.Model.User;
 import com.example.atzfinance.Service.LoanService;
+import com.example.atzfinance.Service.LoggingService;
 import com.example.atzfinance.Service.LoginService;
 
 @Controller
@@ -25,5 +26,13 @@ public class DashboardController {
         model.addAttribute("isUnderwriter", user.getIsUnderwriter());
         model.addAttribute("listLoans", loanService.getAllLoans());
         return "Dashboard/dashboard";
+    }
+
+    @GetMapping("/audit")
+    public String auditLogs(Model model, Authentication authentication) {    
+        User user = userDetailsService.loadUserByUsername(authentication.getName());
+        if (!user.getIsUnderwriter()) return "Dashboard/dashboard";
+        new LoggingService().log("User [" + user.getId() + "] accessed logs.");
+        return "log";
     }
 }
