@@ -1,6 +1,7 @@
 package com.example.atzfinance.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,8 @@ public class RegistrationController {
     private UserRepository userRepo;
 
     @GetMapping("/register")
-    public String showRegistrationForm(Model model) {
+    public String showRegistrationForm(Model model, Authentication authentication) {
+        if (authentication != null) return "redirect:/dashboard";
         model.addAttribute("user", new User());
         return "Registration/signup_form";
     }
