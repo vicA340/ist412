@@ -31,7 +31,7 @@ public class DashboardController {
     @GetMapping("/audit")
     public String auditLogs(Model model, Authentication authentication) {    
         User user = userDetailsService.loadUserByUsername(authentication.getName());
-        if (!user.getIsUnderwriter()) return "Dashboard/dashboard";
+        if (!user.getIsUnderwriter()) return "audit"; // does not exist for non authorized users
         new LoggingService().log("User [" + user.getId() + "] accessed logs.");
         return "log";
     }

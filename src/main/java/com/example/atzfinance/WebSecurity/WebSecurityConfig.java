@@ -28,8 +28,6 @@ public class WebSecurityConfig {
                 .and()
             .formLogin()
                 .loginPage("/login")
-                //.defaultSuccessUrl("/dashboard", true)
-                .successHandler(new CustomAuthenticationSuccessHandler())
                 .permitAll()
                 .and()
             .logout()
