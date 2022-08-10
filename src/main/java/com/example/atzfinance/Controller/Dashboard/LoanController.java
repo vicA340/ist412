@@ -34,6 +34,7 @@ public class LoanController {
     @PostMapping("/loan")
     public String PostLoan(@ModelAttribute Loan loan, Authentication authentication) {
         loan.setStatus(Loan.LoanStatus.PENDING);
+        loan.setBelongsTo(userDetailsService.loadUserByUsername(authentication.getName()).getId());
         loanService.saveLoan(loan);
         log(authentication.getName(), "applied for", loan.getId());
         return "redirect:/dashboard";

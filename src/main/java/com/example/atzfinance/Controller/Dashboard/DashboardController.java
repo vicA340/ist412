@@ -24,6 +24,7 @@ public class DashboardController {
     public String dashboard(Model model, Authentication authentication) {    
         User user = userDetailsService.loadUserByUsername(authentication.getName());
         model.addAttribute("isUnderwriter", user.getIsUnderwriter());
+        model.addAttribute("userId", user.getId());
         model.addAttribute("listLoans", loanService.getAllLoans());
         return "Dashboard/dashboard";
     }

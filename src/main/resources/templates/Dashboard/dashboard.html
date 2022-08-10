@@ -27,26 +27,28 @@
         <tbody>
         <tr>
         <tr th:each="loan : ${listLoans}">
-            <td th:text="${loan.firstName}"></td>
-            <td th:text="${loan.lastName}"></td>
-            <td th:text="'$' + ${loan.loanAmount}"></td>
-            <td th:text="${loan.creditScore}"></td>
-            <td th:text="${loan.status}"></td>
-            <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
-                <a th:href="@{/deleteLoan/{id}(id=${loan.id})}" class="btn btn-danger">Delete</a>
-            </td>
-            <td th:if="${loan.status != T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
-                
-            </td>
-
-            <span th:if="${isUnderwriter} == true">
+            <span th:if="${isUnderwriter == true || userId == loan.belongsTo}">
+                <td th:text="${loan.firstName}"></td>
+                <td th:text="${loan.lastName}"></td>
+                <td th:text="'$' + ${loan.loanAmount}"></td>
+                <td th:text="${loan.creditScore}"></td>
+                <td th:text="${loan.status}"></td>
                 <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
-                    <a th:href="@{/denyLoan/{id}(id=${loan.id})}" class="btn btn-primary">Deny</a>
+                    <a th:href="@{/deleteLoan/{id}(id=${loan.id})}" class="btn btn-danger">Delete</a>
+                </td>
+                <td th:if="${loan.status != T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
+                    
                 </td>
 
-                <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
-                    <a th:href="@{/approveLoan/{id}(id=${loan.id})}" class="btn btn-primary">Approve</a>
-                </td>    
+                <span th:if="${isUnderwriter} == true">
+                    <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
+                        <a th:href="@{/denyLoan/{id}(id=${loan.id})}" class="btn btn-primary">Deny</a>
+                    </td>
+
+                    <td th:if="${loan.status == T(com.example.atzfinance.Model.Loan.LoanStatus).PENDING}">
+                        <a th:href="@{/approveLoan/{id}(id=${loan.id})}" class="btn btn-primary">Approve</a>
+                    </td>    
+                </span>
             </span>
 
         </tr>

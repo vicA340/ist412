@@ -26,6 +26,9 @@ public class Loan implements Serializable {
     @Column(name="status")
     private LoanStatus status;
 
+    @Column(name="belongsTo")
+    private Long belongsTo;
+
     public enum LoanStatus {
         PENDING, DENIED, APPROVED
     }
@@ -44,6 +47,14 @@ public class Loan implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public void setBelongsTo(long id) {
+        this.belongsTo = id;
+    }
+
+    public long getBelongsTo() {
+        return belongsTo;
     }
 
     public String getFirstName() {
